@@ -1,0 +1,15 @@
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+.env
+.env.*
+
+bin/
+dist/
+coverage.out
+
+examples/data/
+examples/**/data/
+

@@ -1,0 +1,409 @@
+[
+  {
+    "source": "A学习总纲.md",
+    "dest": "00-学习总纲.md",
+    "title": "Go Eino 学习总纲",
+    "summary": "把 Quick Start、组件、编排和 ADK 串成一条更适合 Go 工程师的 Eino 学习路径。",
+    "audience": "想系统学 Eino，但不想完全照官方目录走的 Go 开发者。",
+    "prerequisites": [
+      "Go 基础",
+      "前置基础篇可选先读"
+    ],
+    "demo_label": "首批 5 个可运行 demo",
+    "demo_link": "../examples/README.md",
+    "interview_points": [
+      "能说明自己不是零散学 API，而是按模型调用、组件、编排、Agent 四层建立知识体系。",
+      "能解释为什么把 Middleware、Interrupt/Resume、Skill 等主题放到主线后半段。"
+    ],
+    "csdn_url": "https://blog.csdn.net/2302_80067378/category_13132166.html",
+    "official_label": "Eino 快速开始总入口",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/quick_start/"
+  },
+  {
+    "source": "入门必学/AI大模型落地系列：学习AI前需具备的基础知识.md",
+    "dest": "01-前置基础/01-学习AI前需具备的基础知识.md",
+    "title": "AI大模型落地系列：学习AI前需具备的基础知识",
+    "summary": "先把 prompt、Agent、Function Calling、MCP、上下文窗口、RAG 放进同一张认知图，再进入 Eino。",
+    "audience": "刚从通用大模型学习切入，准备进入 Go AI 应用开发的读者。",
+    "prerequisites": [
+      "Go 基础",
+      "对 LLM 基础概念有兴趣即可"
+    ],
+    "demo_label": "从学习总纲进入 Eino 主线",
+    "demo_link": "../00-学习总纲.md",
+    "interview_points": [
+      "能用工程语言解释 Agent、Tool、Function Calling、MCP 各自解决的问题。",
+      "能把 RAG 和上下文窗口讲成真实约束，而不是只背名词。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/158352635",
+    "official_label": "Eino 快速开始总入口",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/quick_start/"
+  },
+  {
+    "source": "入门必学/AI大模型落地系列：一文读懂 Eino 的 ChatModel 和 Message.md",
+    "dest": "02-入门必学/01-ChatModel和Message.md",
+    "title": "AI大模型落地系列：一文读懂 Eino 的 ChatModel 和 Message",
+    "summary": "从一次最小模型调用入手，建立 ChatModel、Message 和流式输出的统一心智模型。",
+    "audience": "第一次接触 Eino，或第一次想把模型调用边界讲清楚的 Go 开发者。",
+    "prerequisites": [
+      "前置基础篇",
+      "Go 基础",
+      "可用的大模型 API Key"
+    ],
+    "demo_label": "examples/chatmodel-message",
+    "demo_link": "../../examples/chatmodel-message/README.md",
+    "interview_points": [
+      "能解释 ChatModel 为什么是模型能力的统一接入层，而不是普通聊天接口。",
+      "能说明 Message 为什么是对话协议，而不是 prompt 字符串。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159393888",
+    "official_label": "Eino 第一章：ChatModel 与 Message",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/quick_start/chapter_01_chatmodel_and_message/"
+  },
+  {
+    "source": "入门必学/AI大模型落地系列：一文读懂 ChatModelAgent、Runner、AgentEvent（Console 多轮）.md",
+    "dest": "02-入门必学/02-ChatModelAgent、Runner、AgentEvent（Console多轮）.md",
+    "title": "AI大模型落地系列：一文读懂 ChatModelAgent、Runner、AgentEvent（Console 多轮）",
+    "summary": "把单轮聊天扩展成 Agent、Runner、事件流，建立 Console 多轮的最小执行闭环。",
+    "audience": "已经跑通 ChatModel，希望继续理解 Agent 运行时的 Go 开发者。",
+    "prerequisites": [
+      "ChatModel 与 Message",
+      "消息角色与流式输出"
+    ],
+    "demo_label": "官方示例 ch02（本仓后续补充同主题 demo）",
+    "demo_link": "https://github.com/cloudwego/eino-examples/blob/main/quickstart/chatwitheino/cmd/ch02/main.go",
+    "interview_points": [
+      "能讲清楚 ChatModelAgent、Runner、AgentEvent 三者的职责分工。",
+      "能说明为什么事件流比直接返回字符串更适合后续扩展工具调用和可观测性。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159468400",
+    "official_label": "Eino 第二章：ChatModelAgent、Runner、AgentEvent",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/quick_start/chapter_02_chatmodelagent_runner_agentevent/"
+  },
+  {
+    "source": "入门必学/AI大模型落地系列：一文读懂 Eino 的 Memory 与 Session（持久化对话）.md",
+    "dest": "02-入门必学/03-Memory与Session（持久化对话）.md",
+    "title": "AI大模型落地系列：一文读懂 Eino 的 Memory 与 Session（持久化对话）",
+    "summary": "用可恢复会话把多轮对话从临时上下文变成可持久化、可恢复的正式会话。",
+    "audience": "准备把 demo 往真实会话系统推进的 Go 开发者。",
+    "prerequisites": [
+      "ChatModelAgent、Runner、AgentEvent",
+      "基础文件读写"
+    ],
+    "demo_label": "examples/memory-session",
+    "demo_link": "../../examples/memory-session/README.md",
+    "interview_points": [
+      "能解释 Memory、Session、Store 三者分别解决什么问题。",
+      "能把会话恢复、持久化格式和上下文回放讲成一个完整链路。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159430416",
+    "official_label": "Eino 第三章：Memory 与 Session",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/quick_start/chapter_03_memory_and_session/"
+  },
+  {
+    "source": "入门必学/AI大模型落地系列：一文读懂 Eino 的 Tool 和文件系统访问.md",
+    "dest": "02-入门必学/04-Tool和文件系统访问.md",
+    "title": "AI大模型落地系列：一文读懂 Eino 的 Tool 和文件系统访问",
+    "summary": "让 Agent 真正具备调用工具和访问文件系统的能力，理解 Tool、Backend、DeepAgent 的分工。",
+    "audience": "想让模型真正动手，而不只是生成文本的读者。",
+    "prerequisites": [
+      "ChatModel",
+      "Agent 运行闭环",
+      "基础文件系统知识"
+    ],
+    "demo_label": "examples/tool-filesystem",
+    "demo_link": "../../examples/tool-filesystem/README.md",
+    "interview_points": [
+      "能解释 Tool、Backend、Agent 在一次工具调用中各自承担什么职责。",
+      "能说明为什么 DeepAgent 比普通聊天 Agent 更接近执行型 Agent。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159395909",
+    "official_label": "Eino 第四章：Tool 与文件系统访问",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/quick_start/chapter_04_tool_and_filesystem/"
+  },
+  {
+    "source": "入门必学/AI大模型落地系列：一文读懂 Callback、Trace 和生产级可观测性.md",
+    "dest": "02-入门必学/05-Callback、Trace和生产级可观测性.md",
+    "title": "AI大模型落地系列：一文读懂 Callback、Trace 和生产级可观测性",
+    "summary": "把模型调用、工具执行和事件流打上观测点，让 Agent 不再是黑盒。",
+    "audience": "准备把 Eino 用到真实项目、需要排障和观测的 Go 开发者。",
+    "prerequisites": [
+      "Tool 与文件系统访问",
+      "Runner 事件流",
+      "日志基础"
+    ],
+    "demo_label": "examples/callback-trace",
+    "demo_link": "../../examples/callback-trace/README.md",
+    "interview_points": [
+      "能说清 Callback 关注的是旁路观测，而不是业务主流程控制。",
+      "能区分组件级错误、事件流错误、流式消费错误分别出现在哪一层。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159434369",
+    "official_label": "Eino 第六章：Callback 与 Trace",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/quick_start/chapter_06_callback_and_trace/"
+  },
+  {
+    "source": "组件核心/AI 大模型落地系列｜Eino 组件核心篇：为什么很多人把 ChatModel 想简单了.md",
+    "dest": "03-组件核心/01-为什么很多人把ChatModel想简单了.md",
+    "title": "AI 大模型落地系列｜Eino 组件核心篇：为什么很多人把 ChatModel 想简单了",
+    "summary": "从组件边界、Option、Callback、WithTools 和自定义实现重新理解 ChatModel 的工程价值。",
+    "audience": "已经能用 ChatModel，但还想把组件边界吃透的 Go 工程师。",
+    "prerequisites": [
+      "ChatModel 与 Message",
+      "组件接口的基本认知"
+    ],
+    "demo_label": "examples/chatmodel-message",
+    "demo_link": "../../examples/chatmodel-message/README.md",
+    "interview_points": [
+      "能解释 ChatModel 为什么是 Eino 组件体系的稳定支点。",
+      "能说明公共 Option、WithTools、Callback、自定义实现分别扩展了哪一层能力。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159492224",
+    "official_label": "ChatModel 使用说明",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/chat_model_guide/"
+  },
+  {
+    "source": "组件核心/AI 大模型落地系列｜Eino 组件核心篇：ChatTemplate 为什么不是字符串拼接.md",
+    "dest": "03-组件核心/02-ChatTemplate为什么不是字符串拼接.md",
+    "title": "AI 大模型落地系列｜Eino 组件核心篇：ChatTemplate 为什么不是字符串拼接",
+    "summary": "把 Prompt 组织方式从字符串拼装提升成消息模板和上下文协议。",
+    "audience": "已经写过 Prompt，希望把 ChatTemplate 看成正式组件的读者。",
+    "prerequisites": [
+      "ChatModel 与 Message",
+      "消息角色基础"
+    ],
+    "demo_label": "examples/chain-graph（包含 ChatTemplate 节点）",
+    "demo_link": "../../examples/chain-graph/README.md",
+    "interview_points": [
+      "能解释 ChatTemplate 和字符串拼接的根本区别在于结构化上下文。",
+      "能说明模板语法、MessagesPlaceholder 和下游编排的关系。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159500932",
+    "official_label": "ChatTemplate 使用说明",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/chat_template_guide/"
+  },
+  {
+    "source": "组件核心/AI 大模型落地系列｜Eino 组件核心篇：Embedding 到底解决了什么.md",
+    "dest": "03-组件核心/03-Embedding到底解决了什么.md",
+    "title": "AI 大模型落地系列｜Eino 组件核心篇：Embedding 到底解决了什么",
+    "summary": "把 Embedding 从一个能调的接口讲成语义检索、RAG 入库和相似度计算的基础设施。",
+    "audience": "准备进入 RAG 或语义检索体系的 Go 开发者。",
+    "prerequisites": [
+      "前置基础篇中的 RAG 概念",
+      "向量与相似度的基本理解"
+    ],
+    "demo_label": "官方 Embedding 示例（本仓后续补充独立 demo）",
+    "demo_link": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/embedding_guide/",
+    "interview_points": [
+      "能说明 Embedding 解决的是把文本映射成可计算语义空间的问题。",
+      "能把 Embedding 放进切块、入库、检索、生成的完整 RAG 链路里。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159079089",
+    "official_label": "Embedding 使用说明",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/embedding_guide/"
+  },
+  {
+    "source": "组件核心/AI 大模型落地系列｜Eino 组件核心篇：为什么很多人会写 Tool，却没真正看懂 ToolsNode.md",
+    "dest": "03-组件核心/04-为什么很多人会写Tool，却没真正看懂ToolsNode.md",
+    "title": "AI 大模型落地系列｜Eino 组件核心篇：为什么很多人会写 Tool，却没真正看懂 ToolsNode",
+    "summary": "从 Tool、ToolsNode、ToolCall 到自定义 Tool 的完整链路重新理解工具能力是怎么接进 Eino 的。",
+    "audience": "已经能写简单 Tool，但想把工具调用链讲透的工程师。",
+    "prerequisites": [
+      "Tool 与文件系统访问",
+      "消息角色与函数调用基础"
+    ],
+    "demo_label": "examples/tool-filesystem（展示工具调用闭环）",
+    "demo_link": "../../examples/tool-filesystem/README.md",
+    "interview_points": [
+      "能解释 Tool 和 ToolsNode 的职责边界，不把两者混为一谈。",
+      "能说明 ToolCall 是怎么从模型决策一路落到工具执行的。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159511006",
+    "official_label": "ToolsNode & Tool 使用说明",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/tools_node_guide/"
+  },
+  {
+    "source": "组件核心/AI 大模型落地系列｜Eino 组件核心篇：为什么很多人会用 Document Loader，却没真正看懂 Parser.md",
+    "dest": "03-组件核心/05-为什么很多人会用Document Loader，却没真正看懂Parser.md",
+    "title": "AI 大模型落地系列｜Eino 组件核心篇：为什么很多人会用 Document Loader，却没真正看懂 Parser",
+    "summary": "把文档进入 RAG 前的加载、解析、结构化协议拆成 Loader 和 Parser 两层来看。",
+    "audience": "准备搭建文档 ingestion 链路，或想把 RAG 入库前半段讲清楚的读者。",
+    "prerequisites": [
+      "schema.Document 的基础概念",
+      "RAG 主链路认知"
+    ],
+    "demo_label": "官方接口与示例（本仓后续补充 Loader demo）",
+    "demo_link": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/document_loader_guide/",
+    "interview_points": [
+      "能解释 Loader 负责来源接入，Parser 负责内容解释，二者不是同一个层级。",
+      "能把文件、元数据、文档协议和后续切块入库串成一条线。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159514239",
+    "official_label": "Document Loader 使用说明",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/document_loader_guide/"
+  },
+  {
+    "source": "组件核心/AI 大模型落地系列｜Eino 组件核心篇：为什么很多人会用 Indexer，却没真正看懂 Store.md",
+    "dest": "03-组件核心/06-为什么很多人会用Indexer，却没真正看懂Store.md",
+    "title": "AI 大模型落地系列｜Eino 组件核心篇：为什么很多人会用 Indexer，却没真正看懂 Store",
+    "summary": "从 RAG 入库链路看清 Indexer 和 Store 的职责，避免把它当成向量库插入函数。",
+    "audience": "准备做知识库写链路、需要把组件分层讲清楚的 Go 开发者。",
+    "prerequisites": [
+      "Document Loader 与 Parser",
+      "Embedding 基础"
+    ],
+    "demo_label": "官方 Indexer 示例（本仓后续补充 Milvus demo）",
+    "demo_link": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/indexer_guide/",
+    "interview_points": [
+      "能解释 Indexer 不只是写向量库，而是统一文档写入协议的组件层。",
+      "能说明 Store、Embedding、SubIndexes 这些概念为什么被拆到不同位置。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159537753",
+    "official_label": "Indexer 使用说明",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/indexer_guide/"
+  },
+  {
+    "source": "组件核心/AI 大模型落地系列｜Eino 组件核心篇：为什么很多人会用 Retriever，却没真正看懂 Retrieve.md",
+    "dest": "03-组件核心/07-为什么很多人会用Retriever，却没真正看懂Retrieve.md",
+    "title": "AI 大模型落地系列｜Eino 组件核心篇：为什么很多人会用 Retriever，却没真正看懂 Retrieve",
+    "summary": "从检索读链路看清 Retriever 真正解决的不是搜一下，而是把召回动作标准化。",
+    "audience": "已经知道 RAG，但想把召回阶段讲清楚的 Go 工程师。",
+    "prerequisites": [
+      "Embedding 基础",
+      "Indexer 与 Store",
+      "TopK 和阈值等检索参数基础"
+    ],
+    "demo_label": "官方 Retriever 示例（本仓后续补充独立 demo）",
+    "demo_link": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/retriever_guide/",
+    "interview_points": [
+      "能解释 Retriever 的核心动作是受控 Retrieve，而不是简单数据库查询。",
+      "能说明 TopK、阈值、MetaData、Embedding 配置为什么都会影响召回效果。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159549389",
+    "official_label": "Retriever 使用说明",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/components/retriever_guide/"
+  },
+  {
+    "source": "编排进阶/AI 大模型落地系列｜Eino 编排进阶篇：一文讲透编排（Chain 与 Graph）.md",
+    "dest": "04-编排进阶/01-一文讲透编排（Chain与Graph）.md",
+    "title": "AI 大模型落地系列｜Eino 编排进阶篇：一文讲透编排（Chain 与 Graph）",
+    "summary": "从执行关系、类型边界、统一运行时三条线看清为什么复杂链路最终都会走到编排。",
+    "audience": "已经理解基础组件，准备进入复杂链路和运行时建模的 Go 开发者。",
+    "prerequisites": [
+      "ChatTemplate、Tool、Retriever 等核心组件",
+      "基础泛型和接口认知"
+    ],
+    "demo_label": "examples/chain-graph",
+    "demo_link": "../../examples/chain-graph/README.md",
+    "interview_points": [
+      "能解释 Chain 和 Graph 的差别在于心智模型和关系显式度，而不是复杂度高低。",
+      "能讲清 Compile、Runnable、类型对齐、状态边界这些编排层关键词。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159571042",
+    "official_label": "Chain/Graph 编排介绍",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/chain_and_graph_orchestration/chain_graph_introduction/"
+  },
+  {
+    "source": "编排进阶/AI 大模型落地系列｜Eino 编排篇：既然有了 Chain、Graph，为何还需要 Workflow.md",
+    "dest": "04-编排进阶/02-既然有了Chain、Graph，为何还需要Workflow.md",
+    "title": "AI 大模型落地系列｜Eino 编排篇：既然有了 Chain、Graph，为何还需要 Workflow",
+    "summary": "从字段映射、控制流和更细颗粒度编排能力解释 Workflow 的独立存在价值。",
+    "audience": "已经看过 Chain / Graph，开始考虑更复杂流程控制的工程师。",
+    "prerequisites": [
+      "Chain 与 Graph",
+      "流程建模基础"
+    ],
+    "demo_label": "官方 Workflow 示例（本仓后续补充同主题 demo）",
+    "demo_link": "https://github.com/cloudwego/eino-examples/tree/main/compose/workflow",
+    "interview_points": [
+      "能解释 Workflow 不是重复造轮子，而是在字段映射和控制流层面补了能力。",
+      "能说明什么时候 Chain / Graph 足够，什么时候该升级到 Workflow。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159583345",
+    "official_label": "Workflow 编排框架",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/chain_and_graph_orchestration/workflow_orchestration_framework/"
+  },
+  {
+    "source": "编排进阶/AI 大模型落地系列｜Eino 编排篇：从自动执行到人工接管，如何避免Agent一把梭.md",
+    "dest": "04-编排进阶/03-从自动执行到人工接管，如何避免Agent一把梭.md",
+    "title": "AI 大模型落地系列｜Eino 编排篇：从自动执行到人工接管，如何避免Agent一把梭",
+    "summary": "把 Interrupt、Resume、CheckPoint 和人工审批串成一套真正可治理的 Agent 执行策略。",
+    "audience": "准备在真实业务里接入敏感工具、审批流或人工接管能力的工程师。",
+    "prerequisites": [
+      "Tool 调用闭环",
+      "Chain / Graph 基础",
+      "Agent Runner 基础"
+    ],
+    "demo_label": "官方 ch07 示例（本仓后续补充审批流 demo）",
+    "demo_link": "https://github.com/cloudwego/eino-examples/blob/main/quickstart/chatwitheino/cmd/ch07/main.go",
+    "interview_points": [
+      "能解释 Interrupt/Resume 解决的是可治理执行，而不是简单暂停。",
+      "能把 CheckPoint、审批策略、版本边界和失败恢复讲成一套生产方案。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159642323",
+    "official_label": "Interrupt & CheckPoint 使用手册",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/chain_and_graph_orchestration/checkpoint_interrupt/"
+  },
+  {
+    "source": "ADK体系/AI 大模型落地系列｜Eino ADK体系篇：什么是 Eino ADK？.md",
+    "dest": "05-ADK体系/01-什么是Eino ADK？.md",
+    "title": "AI 大模型落地系列｜Eino ADK体系篇：什么是 Eino ADK？",
+    "summary": "从概念总览切入，把 ADK 放回 Agent 开发套件而不是单个接口的层级来理解。",
+    "audience": "已经接触过基础组件，准备系统进入 Agent 开发体系的读者。",
+    "prerequisites": [
+      "Chain / Graph 基础",
+      "ChatModelAgent、Runner 基础"
+    ],
+    "demo_label": "官方 ADK 示例（本仓后续补充同主题 demo）",
+    "demo_link": "https://github.com/cloudwego/eino-examples/tree/main/adk",
+    "interview_points": [
+      "能说明 ADK 不是某个 Agent 实现，而是一整套 Agent 开发与扩展能力集合。",
+      "能把 ADK 中的 Agent 抽象、协作、Runner、扩展点串成体系。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159656025",
+    "official_label": "Eino ADK 概述",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/eino_adk/agent_preview/"
+  },
+  {
+    "source": "ADK体系/AI 大模型落地系列｜Eino ADK体系篇：为什么一定要有 Agent 这层抽象.md",
+    "dest": "05-ADK体系/02-为什么一定要有Agent这层抽象.md",
+    "title": "AI 大模型落地系列｜Eino ADK体系篇：为什么一定要有 Agent 这层抽象",
+    "summary": "从接口、输入输出、事件流和自定义实现理解 Agent 抽象为什么不是 Prompt 包装器。",
+    "audience": "准备真正理解 Agent 协议，而不是只会调用现成 Agent 的 Go 工程师。",
+    "prerequisites": [
+      "什么是 Eino ADK",
+      "ChatModelAgent、Runner 基础",
+      "Go 接口与泛型基础"
+    ],
+    "demo_label": "官方 Agent 接口文档与本地自定义 Agent 实战",
+    "demo_link": "https://www.cloudwego.io/zh/docs/eino/core_modules/eino_adk/agent_interface/",
+    "interview_points": [
+      "能解释 Name、Description、Run、AgentEvent、AsyncIterator 这些抽象为什么缺一不可。",
+      "能说明 Agent 输入为什么是 Messages 而不是单个字符串。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159690023",
+    "official_label": "Eino ADK：Agent 抽象",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/eino_adk/agent_interface/"
+  },
+  {
+    "source": "ADK体系/AI 大模型落地系列｜Eino ADK体系篇：你对 ChatModelAgent 有了解吗？.md",
+    "dest": "05-ADK体系/03-你对ChatModelAgent有了解吗？.md",
+    "title": "AI 大模型落地系列｜Eino ADK体系篇：你对 ChatModelAgent 有了解吗？",
+    "summary": "从 ReAct、Transfer、AgentAsTool、Middleware / Handler 这些扩展点深入理解 ChatModelAgent。",
+    "audience": "已经知道 ChatModelAgent 名字，但还没真正掌握其工程边界的读者。",
+    "prerequisites": [
+      "什么是 Eino ADK",
+      "为什么一定要有 Agent 这层抽象",
+      "Tool 调用闭环"
+    ],
+    "demo_label": "官方 ChatModelAgent 文档与实战示例",
+    "demo_link": "https://www.cloudwego.io/zh/docs/eino/core_modules/eino_adk/agent_implementation/chat_model/",
+    "interview_points": [
+      "能解释 ChatModelAgent 为什么是 Agent 能力的常用承载体，而不是万能 Agent。",
+      "能区分普通 Tool、Transfer、AgentAsTool、Handler/Middleware 这些扩展位点。"
+    ],
+    "csdn_url": "https://zhumo.blog.csdn.net/article/details/159696365",
+    "official_label": "Eino ADK：ChatModelAgent",
+    "official_url": "https://www.cloudwego.io/zh/docs/eino/core_modules/eino_adk/agent_implementation/chat_model/"
+  }
+]
