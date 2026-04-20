@@ -149,9 +149,3 @@ go run ./chatmodel-message -- "用一句话解释 Eino 的 Component 设计"
 `-- tools/     # 文档生成脚本和文章映射清单
 ```
 
-## 发布设置
-
-- GitHub 仓库名建议：`go-eino-handbook`
-- GitHub About 的 `Description / Website / Topics` 可复制内容见 [`docs/仓库发布设置.md`](docs/仓库发布设置.md)
-- 这些字段不会自动从 README 同步到 GitHub 仓库设置，需要到仓库右侧 About 面板手动填写
-- 文档重建脚本：[`tools/rebuild-docs.ps1`](tools/rebuild-docs.ps1)
